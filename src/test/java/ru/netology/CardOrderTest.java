@@ -22,6 +22,7 @@ public class CardOrderTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
+        driver.get("http://localhost:9999");
     }
 
     @AfterEach
@@ -31,8 +32,8 @@ public class CardOrderTest {
     }
 
     @Test
-    public void shouldRussianLetters() {
-        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("иван Иванов");
+    public void CardOrderTest() {
+        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Трутнев Иван");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79200605050");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.className("button")).click();
